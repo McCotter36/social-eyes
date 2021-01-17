@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/social-eyes/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/social-eyes/static/js/main.7978934c.chunk.js",
+    "main.js.map": "/social-eyes/static/js/main.7978934c.chunk.js.map",
+    "runtime-main.js": "/social-eyes/static/js/runtime-main.dd5cdbd4.js",
+    "runtime-main.js.map": "/social-eyes/static/js/runtime-main.dd5cdbd4.js.map",
+    "static/js/2.b530637e.chunk.js": "/social-eyes/static/js/2.b530637e.chunk.js",
+    "static/js/2.b530637e.chunk.js.map": "/social-eyes/static/js/2.b530637e.chunk.js.map",
+    "static/js/3.804e1fe4.chunk.js": "/social-eyes/static/js/3.804e1fe4.chunk.js",
+    "static/js/3.804e1fe4.chunk.js.map": "/social-eyes/static/js/3.804e1fe4.chunk.js.map",
+    "index.html": "/social-eyes/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/social-eyes/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.b530637e.chunk.js.LICENSE.txt": "/social-eyes/static/js/2.b530637e.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/social-eyes/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd5cdbd4.js",
+    "static/js/2.b530637e.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.7978934c.chunk.js"
+  ]
+}
