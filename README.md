@@ -1,3 +1,88 @@
+Social Eyes
+A serverless application for searching events according to city. The app uses the Google Calendar API to fetch upcoming events.
+
+FEATURE 1: FILTER EVENTS BY CITY
+As a user
+I should be able to search for a specific city
+So that I can see events for that city
+
+    Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
+    Given User
+    When the user has not searched for a city
+    Then app displays a list of upcoming events for all cities.
+
+    Scenario 2: User should see a list of suggestions when they search for a city.
+    Given search bar 
+    When user types in the search bar
+    Then a list of suggestions is show to the user
+
+    Scenario 3: User can select a city from the suggested list.
+    Given list of suggested cities
+    When user selects a city
+    Then list of events in that city are displayed
+
+FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
+As a user 
+I should be able to show or hide specific events details
+So that I can decide which event to view details while being able to view many events
+
+    Scenario 1: An event element is collapsed by default
+    Given a selected city
+    When user has not selected an event
+    Then each event is displayed collapsed
+
+    Scenario 2: User can expand an event to see its details
+    Given a list of events for a city
+    When user selects a specific event
+    Then the event will expand to share more detailed information
+
+    Scenario 3: User can collapse an event to hide its details
+    Given an expanded view of an event
+    When user selects collapse
+    Then event will hide the listed details as originally listed
+
+
+FEATURE 3: SPECIFY NUMBER OF EVENTS
+As a user
+I should be able to increase or decrease the number of events listed in my view
+So that I can have control over the display of feedback from my search
+
+    Scenario 1: When user hasn’t specified a number, 32 is the default number
+    Given list of events by city	
+    When user has not specified a number
+    Then display will list 32 events by default
+
+    Scenario 2: User can change the number of events they want to see
+    Given list of events by city
+    When user changes preferred number of events
+    Then list number will reflect user’s selected display number
+
+FEATURE 4: USE THE APP WHEN OFFLINE
+As a user
+I should be able to view event I previously viewed when I am offline
+So that I can review my search results even if i have no connection
+
+    Scenario 1: Show cached data when there’s no internet connection
+    Given no internet connection
+    When user views app
+    Then app will display cached data
+
+    Scenario 2: Show error when user changes the settings (city, time range)
+    Given no internet connection
+    When user attempts to change city or time range
+    Then an error message will display
+
+FEATURE 5: DATA VISUALIZATION
+As a user
+I should be able to view a chart of event data according to city
+So that I can analyze the kind of events going on in the city of my choice. 
+
+    Scenario 1: Show a chart with the number of upcoming events in each city
+    Given a city and date range
+    When user selects data visualization
+    Then chart of upcoming events in the city will display
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
