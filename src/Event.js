@@ -18,11 +18,12 @@ class Event extends Component {
     render() {
       const showDetails = this.state.showDetails;
       const { event } = this.props;
+
         return (
         <div className="event">
           <h3 className="summary">{event.summary}</h3>
           <p className="location">{event.location}</p>
-          <p className="start-time">{event.dateTime}</p>
+          <p className="start-time">{event.start.dateTime}</p>
           {!showDetails && (
           <button className="details-button" onClick={this.handleShowDetails}>Show Details</button>
           )}
@@ -32,8 +33,8 @@ class Event extends Component {
           {showDetails && (
             <div className="event-details">
               <p className="event-description">{event.description}</p>
-              <p className="event-start">Begins: {event.start.date} / {event.start.dateTime}</p>
-              <p className="event-end">Ends: {event.end.date} / {event.end.dateTime}</p>
+              <p className="event-start">Begins: {event.start.dateTime} </p>
+              <p className="event-end">Ends: {event.end.dateTime} </p>
               <p className="organizer-name">Organizer: {event.organizer.displayName}</p>
               <p className="organizer-contact">Contact: {event.organizer.email}</p>
             </div>

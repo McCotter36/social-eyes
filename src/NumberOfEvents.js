@@ -5,7 +5,7 @@ class NumberOfEvents extends Component {
     numberOfEvents: 32,
   }
 
-  handleUpdate = (event) => {
+  handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ 
       numberOfEvents: value,
@@ -20,8 +20,8 @@ class NumberOfEvents extends Component {
       type="number"
       className="number-input"
       value={this.state.numberOfEvents}
+      onChange={this.handleInputChanged}
       ></input>
-      <button className="update-button" type="update" onClick={this.handleUpdate}>Update</button>
     </div>
     );
   }

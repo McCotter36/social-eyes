@@ -28,16 +28,16 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find(".number-input")).toHaveLength(1);
   });
 
-  test('renders update button', () => {
-    expect(NumberOfEventsWrapper.find(".update-button")).toHaveLength(1);
-  });
+  // test('renders update button', () => {
+  //   expect(NumberOfEventsWrapper.find(".update-button")).toHaveLength(1);
+  // });
 
-  test('update number of events listed when clicked', () => {
+  test('update number of events when input changes', () => {
     NumberOfEventsWrapper.setState({  
-      numberOfEvents: 32, 
+      numberOfEvents: "32", 
       });
       const inputNumber = { target : { value: "8" } };
-      NumberOfEventsWrapper.find(".update-button").simulate("click", inputNumber); 
+      NumberOfEventsWrapper.find(".number-input").simulate("change", inputNumber); 
       expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe("8");
 
   })

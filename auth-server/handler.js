@@ -63,7 +63,7 @@ module.exports.getAccessToken = async (event) => {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(token),
+      body: JSON.stringify(token)
     };
   })
   .catch((err) => {
@@ -74,6 +74,7 @@ module.exports.getAccessToken = async (event) => {
     };
   });
 };
+
 module.exports.getCalendarEvents = async (event) => {
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
@@ -87,8 +88,8 @@ module.exports.getCalendarEvents = async (event) => {
   });
   return new Promise((resolve, reject) => {
 
-    calendar.events.list(
-      {
+    calendar.events.list({
+
         calendarId: calendar_id,
         auth: oAuth2Client,
         timeMin: new Date().toISOString(),
