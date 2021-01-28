@@ -5,6 +5,7 @@ import EventList from '../EventList';
 import CitySearch from '../CitySearch';
 import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
+import NumberOfEvents from '../NumberOfEvents';
 import { getCalendarEvents } from '../../auth-server/handler';
 
 
@@ -63,4 +64,19 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
+  test('App passes "numberOfEvents" prop to NumberOfEvents component', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state("numberOfEvents");
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberOfEventsState);
+    AppWrapper.unmount();
+  });
+
+  test('App correctly displays number of events according to number Input', () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    NumberOfEventsWrapper.setState({ numberOfEvents: 20 });
+    const eventNumber = { target: { value: 2 } };
+    NumberOfEventsWrapper.find(".number-input").simulate("change", eventNumber);
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(2);
+  })
 });

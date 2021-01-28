@@ -118,8 +118,8 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.NuumberOfEvents {
-  width: 200px;
+.NumberOfEvents {
+  width: 50px;
   margin: 20px auto;
   text-align: left;
 }
