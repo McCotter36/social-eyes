@@ -56,9 +56,11 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        <div className="Selections">
         <CitySearch className="CitySearch" locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents className="NumberOfEvents" numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />      
+        </div>
+        <EventList className="EventList" events={this.state.events} />      
       </div>
     );
   }

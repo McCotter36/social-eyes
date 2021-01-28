@@ -1,13 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 .App {
+  font-family: "Anton";
+  font-kerning: auto;
   text-align: center;
   padding: 2% 5%;
+  color: white;
 }
 
 .App * {
     box-sizing: border-box;
 }
-
+.Selections {
+  display: flex;
+}
 ul {
   padding: 0;
   list-style: none;
@@ -20,8 +25,18 @@ p {
 .display-none {
   display: none;
 }
+
 .showSuggestions {
   display: block;
+}
+
+.number-input{
+  width: 100px;
+  text-align: center;
+}
+
+.city{
+  text-align: center;
 }
 
 input[type="text"],
@@ -55,15 +70,17 @@ input[type="number"] {
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 43px;
+  top: 50px;
   font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
 .suggestions > li {
-  text-align: left;
+  font-family: "Anton";
+  text-align: center;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: rgb(25, 25, 37, .75);
   cursor: default;
 }
 
@@ -73,7 +90,8 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  transition: .5s;
+  background-color: #4285f4;
 }
 
 .event {
@@ -85,19 +103,59 @@ input[type="number"] {
   position: relative;
 }
 
-.details-button {
+/* @media (min-width: 300) {
+  .EventList {
+    display: flex;
+    flex-basis: 50%;
+  }
+} */
+
+@media only screen and (min-width: 1024px) {
+  .event-list {
+    column-count: 2;
+  }
+}
+
+.details-button{
+  font-family: inherit;
   position: absolute;
   right: 5px;
   bottom: 5px;
-  padding: 5px 8px;
+  display: block;
+  color: rgb(25, 25, 37);
+  font-size: 120%;
+  background: white;
+  border: none;
   border-radius: 4px;
-  outline: none;
+  margin: 0 15px;
   cursor: pointer;
+  transition: .5s;
 }
 
-.details-button:hover {
-  opacity: 70%
+.detials-button:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: inherit;
+  transform: scale(.9);
+  z-index: -1;
+  transition: .5s;
 }
+
+.detials-button:hover:before{
+  filter: blur(3px);
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #4285f4;
+}
+
+.details-button:hover{
+  color: #4285f4;
+  box-shadow: 0 0 20px #4285f4;
+  text-shadow: 0 0 20px #4285f4;
+}
+
 
 .name {
   font-size: 18px;
@@ -119,9 +177,11 @@ input[type="number"] {
 }
 
 .NumberOfEvents {
-  width: 50px;
+  width: 300px;
   margin: 20px auto;
-  text-align: left;
+  text-align: center;
+  display: Flex;
+  flex-direction: column;
 }
 
 .button-wrapper {
