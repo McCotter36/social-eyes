@@ -77,8 +77,8 @@ describe('<App /> integration', () => {
     AppWrapper.instance().updateEvents = jest.fn();
     AppWrapper.instance().forceUpdate();
     NumberOfEventsWrapper.setState({ numberOfEvents: 20 });
-    const eventNumber = { target: { value: 2 } };
-    NumberOfEventsWrapper.find(".number-input").simulate("change", eventNumber);
+    const eventCount = { target: { value: 2 } };
+    NumberOfEventsWrapper.find(".number-input").simulate("change", eventCount);
     expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(2);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, 2);
     AppWrapper.unmount();
