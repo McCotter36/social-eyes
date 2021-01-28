@@ -5,7 +5,7 @@ import NumberOfEvents from '../NumberOfEvents';
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => {}}/> );
   });
 
   test('render NumberOfEvents Component', () => {
@@ -16,8 +16,8 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find(".number-of-events")).toHaveLength(1);
   });
 
-  test('default number of events equals 32', () => {
-    expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(32);
+  test('default number of events equals 20', () => {
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(20);
   });
 
   test('render number of events label', () => {
@@ -34,7 +34,7 @@ describe('<NumberOfEvents /> component', () => {
 
   test('update number of events when input changes', () => {
     NumberOfEventsWrapper.setState({  
-      numberOfEvents: "32", 
+      numberOfEvents: "20", 
       });
       const inputNumber = { target : { value: "8" } };
       NumberOfEventsWrapper.find(".number-input").simulate("change", inputNumber); 

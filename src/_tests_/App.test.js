@@ -74,9 +74,13 @@ describe('<App /> integration', () => {
   test('App correctly displays number of events according to number Input', () => {
     const AppWrapper = mount(<App />);
     const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    AppWrapper.instance().updateEvents = jest.fn();
+    AppWrapper.instance().forceUpdate();
     NumberOfEventsWrapper.setState({ numberOfEvents: 20 });
     const eventNumber = { target: { value: 2 } };
     NumberOfEventsWrapper.find(".number-input").simulate("change", eventNumber);
     expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(2);
-  })
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, 2);
+    AppWrapper.unmount();
+  });
 });
