@@ -1,0 +1,315 @@
+
+  //  - false: Disable automatic repository scanning.
+  //  - subFolders: Scan for subfolders of the currently opened folder.
+  //  - openEditors: Scan for parent folders of open files.
+  "git.autoRepositoryDetection": true,
+
+  // Stash any changes before pulling and restore them after successful pull.
+  "git.autoStash": false,
+
+  // Controls the sort order for branches.
+  "git.branchSortOrder": "committerdate",
+
+  // A regular expression to validate new branch names.
+  "git.branchValidationRegex": "",
+
+  // The character to replace whitespace in new branch names.
+  "git.branchWhitespaceChar": "-",
+
+  // Controls what type of git refs are listed when running `Checkout to...`.
+  "git.checkoutType": ["local", "remote", "tags"],
+
+  // Always confirm the creation of empty commits for the 'Git: Commit Empty' command.
+  "git.confirmEmptyCommits": true,
+
+  // Controls whether to ask for confirmation before force-pushing.
+  "git.confirmForcePush": true,
+
+  // Controls whether to ask for confirmation before commiting without verification.
+  "git.confirmNoVerifyCommit": true,
+
+  // Confirm before synchronizing git repositories.
+  "git.confirmSync": true,
+
+  // Controls the Git count badge.
+  //  - all: Count all changes.
+  //  - tracked: Count only tracked changes.
+  //  - off: Turn off counter.
+  "git.countBadge": "all",
+
+  // Controls whether Git contributes colors and badges to the explorer and the open editors view.
+  "git.decorations.enabled": true,
+
+  // The default location to clone a git repository.
+  "git.defaultCloneDirectory": null,
+
+  // Controls whether to automatically detect git submodules.
+  "git.detectSubmodules": true,
+
+  // Controls the limit of git submodules detected.
+  "git.detectSubmodulesLimit": 10,
+
+  // Enables commit signing with GPG or X.509.
+  "git.enableCommitSigning": false,
+
+  // Whether git is enabled.
+  "git.enabled": true,
+
+  // Commit all changes when there are no staged changes.
+  "git.enableSmartCommit": false,
+
+  // Controls whether the Git Sync command appears in the status bar.
+  "git.enableStatusBarSync": true,
+
+  // When enabled, fetch all branches when pulling. Otherwise, fetch just the current one.
+  "git.fetchOnPull": false,
+
+  // Follow push all tags when running the sync command.
+  "git.followTagsWhenSync": false,
+
+  // List of git repositories to ignore.
+  "git.ignoredRepositories": [],
+
+  // Ignores the legacy Git warning.
+  "git.ignoreLegacyWarning": false,
+
+  // Ignores the warning when there are too many changes in a repository.
+  "git.ignoreLimitWarning": false,
+
+  // Ignores the warning when Git is missing.
+  "git.ignoreMissingGitWarning": false,
+
+  // Ignore modifications to submodules in the file tree.
+  "git.ignoreSubmodules": false,
+
+  // Ignores the warning when Git 2.25 - 2.26 is installed on Windows.
+  "git.ignoreWindowsGit27Warning": false,
+
+  // Controls when to show commit message input validation.
+  "git.inputValidation": "warn",
+
+  // Controls the commit message length threshold for showing a warning.
+  "git.inputValidationLength": 72,
+
+  // Controls the commit message subject length threshold for showing a warning. Unset it to inherit the value of `config.inputValidationLength`.
+  "git.inputValidationSubjectLength": 50,
+
+  // Controls whether to open a repository automatically after cloning.
+  //  - always: Always open in current window.
+  //  - alwaysNewWindow: Always open in a new window.
+  //  - whenNoFolderOpen: Only open in current window when no folder is opened.
+  //  - prompt: Always prompt for action.
+  "git.openAfterClone": "prompt",
+
+  // Controls whether the diff editor should be opened when clicking a change. Otherwise the regular editor will be opened.
+  "git.openDiffOnClick": true,
+
+  // Path and filename of the git executable, e.g. `C:\Program Files\Git\bin\git.exe` (Windows). This can also be an array of string values containing multiple paths to look up.
+  "git.path": null,
+
+  // Runs a git command after a successful commit.
+  //  - none: Don't run any command after a commit.
+  //  - push: Run 'Git Push' after a successful commit.
+  //  - sync: Run 'Git Sync' after a successful commit.
+  "git.postCommitCommand": "none",
+
+  // Controls whether Git should check for unsaved files before committing.
+  //  - always: Check for any unsaved files.
+  //  - staged: Check only for unsaved staged files.
+  //  - never: Disable this check.
+  "git.promptToSaveFilesBeforeCommit": "always",
+
+  // Controls whether Git should check for unsaved files before stashing changes.
+  //  - always: Check for any unsaved files.
+  //  - staged: Check only for unsaved staged files.
+  //  - never: Disable this check.
+  "git.promptToSaveFilesBeforeStash": "always",
+
+  // Prune when fetching.
+  "git.pruneOnFetch": false,
+
+  // Fetch all tags when pulling.
+  "git.pullTags": true,
+
+  // Force git to use rebase when running the sync command.
+  "git.rebaseWhenSync": false,
+
+  // List of paths to search for git repositories in.
+  "git.scanRepositories": [],
+
+  // Controls whether to show the commit input in the Git source control panel.
+  "git.showCommitInput": true,
+
+  // Controls whether to show an inline Open File action in the Git changes view.
+  "git.showInlineOpenFileAction": true,
+
+  // Controls whether git actions should show progress.
+  "git.showProgress": true,
+
+  // Controls whether to show a notification when a push is successful.
+  "git.showPushSuccessNotification": false,
+
+  // Control which changes are automatically staged by Smart Commit.
+  //  - all: Automatically stage all changes.
+  //  - tracked: Automatically stage tracked changes only.
+  "git.smartCommitChanges": "all",
+
+  // Suggests to enable smart commit (commit all changes when there are no staged changes).
+  "git.suggestSmartCommit": true,
+
+  // Controls whether a notification comes up when running the Sync action, which allows the user to cancel the operation.
+  "git.supportCancellation": false,
+
+  // Controls whether to enable VS Code to be the authentication handler for git processes spawned in the integrated terminal. Note: terminals need to be restarted to pick up a change in this setting.
+  "git.terminalAuthentication": true,
+
+  // Controls which date to use for items in the Timeline view
+  //  - committed: Use the committed date
+  //  - authored: Use the authored date
+  "git.timeline.date": "committed",
+
+  // Controls whether to show the commit author in the Timeline view
+  "git.timeline.showAuthor": true,
+
+  // Controls how untracked changes behave.
+  //  - mixed: All changes, tracked and untracked, appear together and behave equally.
+  //  - separate: Untracked changes appear separately in the Source Control view. They are also excluded from several actions.
+  //  - hidden: Untracked changes are hidden and excluded from several actions.
+  "git.untrackedChanges": "mixed",
+
+  // Controls whether to use the message from the commit input box as the default stash message.
+  "git.useCommitInputAsStashMessage": false,
+
+  // Controls whether force pushing uses the safer force-with-lease variant.
+  "git.useForcePushWithLease": true,
+
+  // Controls whether to enable automatic GitHub authentication for git commands within VS Code.
+  "github.gitAuthentication": true,
+
+  // Grunt
+
+  // Controls whether auto detection of Grunt tasks is on or off. Default is on.
+  "grunt.autoDetect": "on",
+
+  // Gulp
+
+  // Controls whether auto detection of Gulp tasks is on or off. Default is on.
+  "gulp.autoDetect": "on",
+
+  // Jake
+
+  // Controls whether auto detection of Jake tasks is on or off. Default is on.
+  "jake.autoDetect": "on",
+
+  // Merge Conflict
+
+  // Whether to automatically navigate to the next merge conflict after resolving a merge conflict.
+  "merge-conflict.autoNavigateNextConflict.enabled": false,
+
+  // Create a CodeLens for merge conflict blocks within editor.
+  "merge-conflict.codeLens.enabled": true,
+
+  // Create decorators for merge conflict blocks within editor.
+  "merge-conflict.decorators.enabled": true,
+
+  // Controls where the diff view should be opened when comparing changes in merge conflicts.
+  //  - Current: Open the diff view in the current editor group.
+  //  - Beside: Open the diff view next to the current editor group.
+  //  - Below: Open the diff view below the current editor group.
+  "merge-conflict.diffViewPosition": "Current",
+
+  // JavaScript Debugger
+
+  // Configures which processes to automatically attach and debug when `debug.node.autoAttach` is on. A Node process launched with the `--inspect` flag will always be attached to, regardless of this setting.
+  //  - always: Auto attach to every Node.js process launched in the terminal.
+  //  - smart: Auto attach when running scripts that aren't in a node_modules folder.
+  //  - onlyWithFlag: Only auto attach when the `--inspect` is given.
+  //  - disabled: Auto attach is disabled and not shown in status bar.
+  "debug.javascript.autoAttachFilter": "disabled",
+
+  // Configures glob patterns for determining when to attach in "smart" `debug.javascript.autoAttachFilter` mode. `$KNOWN_TOOLS$` is replaced with a list of names of common test and code runners.
+  "debug.javascript.autoAttachSmartPattern": [
+    "!**/{node_modules,npm-global,.yarn,.nvm}/**",
+    "**/$KNOWN_TOOLS$/**"
+  ],
+
+  // Configures whether property getters will be expanded automatically. If this is false, the getter will appear as `get propertyName` and will only be evaluated when you click on it.
+  "debug.javascript.autoExpandGetters": false,
+
+  // When debugging a remote web app, configures whether to automatically tunnel the remote server to your local machine.
+  "debug.javascript.automaticallyTunnelRemoteServer": true,
+
+  // Whether to stop when conditional breakpoints throw an error. Note: your launch.json `type` must be prefixed with `pwa-` to use this, such as `pwa-node`.
+  "debug.javascript.breakOnConditionalError": false,
+
+  // Where a "Run" and "Debug" code lens should be shown in your npm scripts. It may be on "all", scripts, on "top" of the script section, or "never".
+  "debug.javascript.codelens.npmScripts": "top",
+
+  // Options used when debugging open links clicked from inside the JavaScript Debug Terminal. Can be set to "off" to disable this behavior, or "always" to enable debugging in all terminals.
+  "debug.javascript.debugByLinkOptions": "on",
+
+  // Default options used when debugging a process through the `Debug: Attach to Node.js Process` command
+  "debug.javascript.pickAndAttachOptions": {},
+
+  // Whether to suggest pretty printing JavaScript code that looks minified when you step into it.
+  "debug.javascript.suggestPrettyPrinting": true,
+
+  // Default launch options for the JavaScript debug terminal and npm scripts.
+  "debug.javascript.terminalOptions": {},
+
+  // Configures whether sourcemapped file where the original file can't be read will automatically be unmapped. If this is false (default), a prompt is shown.
+  "debug.javascript.unmapMissingSources": false,
+
+  // Use the new in-preview JavaScript debugger for Node.js and Chrome.
+  "debug.javascript.usePreview": true,
+
+  // Controls whether to show a warning when the 'useWSL' attribute is used.
+  "debug.node.showUseWslIsDeprecatedWarning": true,
+
+  // References Search View
+
+  // Controls whether 'Peek References' or 'Find References' is invoked when selecting code lens references
+  //  - peek: Show references in peek editor.
+  //  - view: Show references in separate view.
+  "references.preferredLocation": "peek",
+
+  // Npm
+
+  // Controls whether npm scripts should be automatically detected.
+  "npm.autoDetect": "on",
+
+  // Enable running npm scripts contained in a folder from the Explorer context menu.
+  "npm.enableRunFromFolder": false,
+
+  // The NPM Script Explorer is now available in 'Views' menu in the Explorer in all folders.
+  // Enable an explorer view for npm scripts when there is no top-level 'package.json' file.
+  "npm.enableScriptExplorer": false,
+
+  // Configure glob patterns for folders that should be excluded from automatic script detection.
+  "npm.exclude": "",
+
+  // Fetch data from https://registry.npmjs.org and https://registry.bower.io to provide auto-completion and information on hover features on npm dependencies.
+  "npm.fetchOnlinePackageInfo": true,
+
+  // The package manager used to run scripts.
+  //  - auto: Auto-detect which package manager to use for running scripts based on lock files and installed package managers.
+  //  - npm: Use npm as the package manager for running scripts.
+  //  - yarn: Use yarn as the package manager for running scripts.
+  //  - pnpm: Use pnpm as the package manager for running scripts.
+  "npm.packageManager": "auto",
+
+  // Run npm commands with the `--silent` option.
+  "npm.runSilent": false,
+
+  // The default click action used in the npm scripts explorer: `open` or `run`, the default is `open`.
+  "npm.scriptExplorerAction": "open"
+
+  "workbench.colorTheme": "Default Light+",
+"editor.quickSuggestions": true,
+"window.zoomLevel": 0,
+"gherkin-autocomplete.featuresPath": "src/features",
+"cucumberautocomplete.steps": [
+    "src/step_definitions/*.js",
+],
+"cucumberautocomplete.syncfeatures": "src/features/*feature",
+}

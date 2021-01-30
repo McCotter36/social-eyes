@@ -106,10 +106,11 @@ input[type="number"] {
 @media (min-width: 1024px) {
   .event-list {
     display: flexbox;
-    flex-direction: column;
+    flex-flow: column;
     column-count: 2;
-    flex-wrap: nowrap;
-    height: auto;
+  }
+  .event-li {
+    display: block;
   }
 }
 
