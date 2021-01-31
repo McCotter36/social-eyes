@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/social-eyes/static/css/main.ce0da601.chunk.css",
-    "main.js": "/social-eyes/static/js/main.fdd1e8a5.chunk.js",
-    "main.js.map": "/social-eyes/static/js/main.fdd1e8a5.chunk.js.map",
+    "main.css": "/social-eyes/static/css/main.42f6be8b.chunk.css",
+    "main.js": "/social-eyes/static/js/main.ceeb1fc3.chunk.js",
+    "main.js.map": "/social-eyes/static/js/main.ceeb1fc3.chunk.js.map",
     "runtime-main.js": "/social-eyes/static/js/runtime-main.c6969683.js",
     "runtime-main.js.map": "/social-eyes/static/js/runtime-main.c6969683.js.map",
-    "static/js/2.cb8e59c4.chunk.js": "/social-eyes/static/js/2.cb8e59c4.chunk.js",
-    "static/js/2.cb8e59c4.chunk.js.map": "/social-eyes/static/js/2.cb8e59c4.chunk.js.map",
+    "static/js/2.416c69c5.chunk.js": "/social-eyes/static/js/2.416c69c5.chunk.js",
+    "static/js/2.416c69c5.chunk.js.map": "/social-eyes/static/js/2.416c69c5.chunk.js.map",
     "static/js/3.5a3ca13f.chunk.js": "/social-eyes/static/js/3.5a3ca13f.chunk.js",
     "static/js/3.5a3ca13f.chunk.js.map": "/social-eyes/static/js/3.5a3ca13f.chunk.js.map",
     "index.html": "/social-eyes/index.html",
-    "static/css/main.ce0da601.chunk.css.map": "/social-eyes/static/css/main.ce0da601.chunk.css.map",
-    "static/js/2.cb8e59c4.chunk.js.LICENSE.txt": "/social-eyes/static/js/2.cb8e59c4.chunk.js.LICENSE.txt"
+    "static/css/main.42f6be8b.chunk.css.map": "/social-eyes/static/css/main.42f6be8b.chunk.css.map",
+    "static/js/2.416c69c5.chunk.js.LICENSE.txt": "/social-eyes/static/js/2.416c69c5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c6969683.js",
-    "static/js/2.cb8e59c4.chunk.js",
-    "static/css/main.ce0da601.chunk.css",
-    "static/js/main.fdd1e8a5.chunk.js"
+    "static/js/2.416c69c5.chunk.js",
+    "static/css/main.42f6be8b.chunk.css",
+    "static/js/main.ceeb1fc3.chunk.js"
   ]
 }
