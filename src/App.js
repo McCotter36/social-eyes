@@ -4,11 +4,13 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
-import { getEvents, extractLocations } from './api';
 import { OfflineAlert } from './Alert';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
-} from 'recharts';import './nprogress.css';
+} from 'recharts';
+import Login from './Login';
+import { getEvents, checkToken, getToken } from './api';
+import './nprogress.css';
 
 class App extends Component {
   state = {
@@ -17,6 +19,7 @@ class App extends Component {
     numberOfEvents: 20,
     selectedLocation: "all",
     alertText: "",
+    tokenCheck: false,
   }
 
   getData = () => {
@@ -30,7 +33,7 @@ class App extends Component {
   };
   
   updateEvents = (location, eventCount) => {
-    const { selectedLocation, numberOfEvents } = this.state;
+    const { selectedLocation, numberOfEvents } = this.tokenCheck;
     if (location) {
     getEvents().then((events) => {
       const locationEvents = location === "all" ?
@@ -55,15 +58,20 @@ class App extends Component {
   }
 };
 
-  componentDidMount() {
-    this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
-      }
-    });
-    window.addEventListener("online", this.offlineAlert());
+async componentDidMount() {
+  const accessToken = localStorage.getItem("access_token");
+  const validToken = accessToken !== null  ? await checkToken(accessToken) : false;
+  this.setState({ tokenCheck: validToken });
+  if(validToken === true) this.updateEvents()
+  const searchParams = new URLSearchParams(window.location.search);
+  const code = searchParams.get("code");
+
+  this.mounted = true;
+  if (code && this.mounted === true && validToken === false){ 
+    this.setState({tokenCheck:true });
+    this.updateEvents()
   }
+}
 
   offlineAlert = () => {
     if (navigator.onLine === false) {
@@ -80,8 +88,24 @@ class App extends Component {
     this.mounted = false;
   }
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location)
+        .length;
+      const city = location.split(" ").shift();
+      return { city, number };
+    });
+    return data;
+  };
+
   render () {
-    return (
+    const { locations, numberOfEvents, events, tokenCheck } = this.state;
+    return tokenCheck === false ? (
+      <div className="App">
+        <Login />
+        </div>
+    ) : (
       <div className="App">
         <div className="Selections">
         <OfflineAlert className="alert" text={this.state.alertText} />
