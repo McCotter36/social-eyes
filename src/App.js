@@ -100,13 +100,12 @@ async componentDidMount() {
   };
 
   render () {
-    // const { locations, numberOfEvents, events, tokenCheck } = this.state;
-    // return tokenCheck === false ? (
-    //   <div className="App">
-    //     <Login />
-    //     </div>
-    // ) : 
-    return (
+    const { locations, numberOfEvents, events, tokenCheck } = this.state;
+    return tokenCheck === false ? (
+      <div className="App">
+        <Login />
+        </div>
+    ) :  (
       <div className="App">
         <div className="Selections">
         <OfflineAlert className="alert" text={this.state.alertText} />

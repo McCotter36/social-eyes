@@ -17,8 +17,7 @@ alt="Google sign-in"
 />
 </div>
 <a
-href="THE URL RETURNED FROM YOUR getAuth
-ENDPOINT HERE"
+href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&response_type=code&client_id=1062261054092-ca3p92e04sbr32ee062lmm093p5s7qta.apps.googleusercontent.com&redirect_uri=https%3A%2F%2FMcCotter36.github.io%2Fsocial-eyes"
 rel="nofollow noopener"
 class="btn-text"
 >
@@ -27,7 +26,7 @@ class="btn-text"
 </div>
 </div>
 <a
-href="https://glenzy.github.io/meet/privacy.html"
+href="https://McCotter36.github.io/social-eyes/privacy.html"
 rel="nofollow noopener"
 className="link"
 >
