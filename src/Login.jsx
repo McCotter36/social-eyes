@@ -11,8 +11,7 @@ return (
           <div class="google-icon-wrapper">
             <img
                 class="google-icon"
-                src="https://upload.wikimedia.org/wikipedia/commons/5/53/G
-                oogle_%22G%22_Logo.svg"
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                 alt="Google sign-in"
               />
           </div>
