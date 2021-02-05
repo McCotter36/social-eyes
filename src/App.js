@@ -33,7 +33,7 @@ class App extends Component {
   };
   
   updateEvents = (location, eventCount) => {
-    const { selectedLocation, numberOfEvents } = this.tokenCheck;
+    const { selectedLocation, numberOfEvents } = this.state;
     if (location) {
     getEvents().then((events) => {
       const locationEvents = location === "all" ?
@@ -100,12 +100,13 @@ async componentDidMount() {
   };
 
   render () {
-    const { locations, numberOfEvents, events, tokenCheck } = this.state;
-    return tokenCheck === false ? (
-      <div className="App">
-        <Login />
-        </div>
-    ) : (
+    // const { locations, numberOfEvents, events, tokenCheck } = this.state;
+    // return tokenCheck === false ? (
+    //   <div className="App">
+    //     <Login />
+    //     </div>
+    // ) : 
+    return (
       <div className="App">
         <div className="Selections">
         <OfflineAlert className="alert" text={this.state.alertText} />

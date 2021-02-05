@@ -4,7 +4,7 @@ return (
 <div className="App">
 <h1>Welcome to Social Eyes</h1>
 <h4>
-An App created to show upcoming events around the world for full-stack developers
+An App created to shown upcoming events around the world for full-stack developers
 </h4>
 <div className="button_cont" align="center">
 <div class="google-btn">
