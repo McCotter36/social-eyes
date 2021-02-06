@@ -8,7 +8,7 @@ import { OfflineAlert } from './Alert';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
-import Login from './Login';
+// import Login from './Login';
 import { getEvents, checkToken, getToken } from './api';
 import './nprogress.css';
 
@@ -100,12 +100,13 @@ async componentDidMount() {
   };
 
   render () {
-    const { locations, numberOfEvents, events, tokenCheck } = this.state;
-    return tokenCheck === false ? (
-      <div className="App">
-        <Login />
-        </div>
-    ) :  (
+    // const { locations, numberOfEvents, events, tokenCheck } = this.state;
+    // return tokenCheck === false ? (
+    //   <div className="App">
+    //     <Login />
+    //     </div>
+    // ) : 
+    return (
       <div className="App">
         <div className="Selections">
         <OfflineAlert className="alert" text={this.state.alertText} />
