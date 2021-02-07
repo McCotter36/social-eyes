@@ -9,7 +9,7 @@ import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 import Login from './Login';
-import { getEvents, checkToken, getToken } from './api';
+import { getEvents, checkToken } from './api';
 import './nprogress.css';
 
 class App extends Component {
@@ -90,12 +90,12 @@ async componentDidMount() {
   };
 
   render () {
-    const { locations, numberOfEvents, events, tokenCheck } = this.state;
+    const { tokenCheck } = this.state;
     return tokenCheck === false ? (
       <div className="App">
         <Login />
         </div>
-    ) :  (
+    ) : (
       <div className="App">
         <div className="Selections">
         <OfflineAlert className="alert" text={this.state.alertText} />

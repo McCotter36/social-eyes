@@ -8,15 +8,24 @@ const extractLocations = (events) => {
   return locations;
 };
 
-const checkToken = async (accessToken) => {
-  const result = await fetch(
-    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
-  )
-    .then((res) => res.json())
-    .catch((error) => error.json());
+// const checkToken = async (accessToken) => {
+//   const result = await fetch(
+//     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+//   )
+//     .then((res) => res.json())
+//     .catch((error) => error.json());
 
-  return result.error ? false : true;
-};
+//   return result.error ? false : true;
+// };
+
+const checkToken = async (accessToken) => {
+  try{
+    const response = await axios(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`);
+    return true;
+  }catch(e){
+    return false
+  }
+}
 
 const getEvents = async () => {
   NProgress.start();
