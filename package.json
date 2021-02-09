@@ -1,5 +1,5 @@
 {
-  "name": "meet",
+  "name": "social-eyes",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://McCotter36.github.io/social-eyes/",
@@ -11,9 +11,10 @@
     "axios": "^0.21.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "googleapis": "^59.0.0",
     "nprogress": "^0.2.0",
     "puppeteer": "^5.5.0",
-    "react": "16.14.0",
+    "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "4.0.1",
     "recharts": "^2.0.4",
