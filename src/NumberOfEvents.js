@@ -16,7 +16,7 @@ class NumberOfEvents extends Component {
 
     if (value < 1 || value > 20) {
       this.setState({
-        infoText: "Please choose a number between 1 and 20",
+        infoText: "Please choose a number between 1 & 20",
       });
     } else {
       this.setState({

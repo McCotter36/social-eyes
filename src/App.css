@@ -119,8 +119,10 @@ input[type="number"] {
 }
 
 .alert {
-  font-size: 8px;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
   text-align: center;
+  margin: 0 auto,
 }
 
 .suggestions {
@@ -168,6 +170,7 @@ input[type="number"] {
     flex-flow: column;
     column-count: 2;
   }
+
   .event-li {
     display: block;
   }
@@ -249,11 +252,6 @@ input[type="number"] {
   grid-gap: 20px;
   padding: 20px;
   font-family: sans-serif;
-}
-
-.Alert {
-  position: fixed;
-  top: 20px;
 }
 
 .data-vis-wrapper {

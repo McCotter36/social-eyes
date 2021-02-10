@@ -6,11 +6,18 @@ import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
 import { OfflineAlert } from './Alert';
 import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+  ScatterChart, 
+  Scatter, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  ResponsiveContainer
 } from 'recharts';
 // import Login from './Login';
-import { extractLocations, getEvents, checkToken } from './api';
-import './nprogress.css';
+import { extractLocations, getEvents } from './api';
+// import './nprogress.css';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -26,9 +33,10 @@ class App extends Component {
     const { selectedLocation, numberOfEvents } = this.state;
     if (location) {
     getEvents().then((events) => {
-      const locationEvents = location === "all" ?
-        events :
-        events.filter((event) => event.location === location);
+      const locationEvents = 
+      location === "all" 
+        ? events 
+        : events.filter((event) => event.location === location);
       const filteredEvents = locationEvents.slice(0, numberOfEvents);
       this.setState({
         events: filteredEvents,
@@ -37,9 +45,9 @@ class App extends Component {
     });
   } else {
     getEvents().then((events) => {
-      const locationEvents = selectedLocation === "all" ?
-        events :
-        events.filter((event) => event.location === selectedLocation);
+      const locationEvents = selectedLocation === "all" 
+        ? events
+        : events.filter((event) => event.location === selectedLocation);
       const filteredEvents = locationEvents.slice(0, eventCount);
       this.setState({
         events: filteredEvents,
@@ -103,7 +111,7 @@ componentDidMount() {
   };
 
   render () {
-    const { tokenCheck } = this.state;
+    // const { tokenCheck } = this.state;
     return (
     // tokenCheck === false ? (
     //   <div className="App">
@@ -112,8 +120,10 @@ componentDidMount() {
     // ) : 
     
       <div className="App">
-        <div className="Selections">
+        <div className="alert">
         <OfflineAlert className="alert" text={this.state.alertText} />
+        </div>
+        <div className="Selections">
         <CitySearch className="CitySearch" locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents className="NumberOfEvents" numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
         </div>
@@ -121,10 +131,13 @@ componentDidMount() {
       <div className="data-vis-wrapper">
         <EventGenre
         locations={this.state.locations}
-        events={this.state.events} 
+        events={this.state.events}
         />
-      <ResponsiveContainer height={400} >
-        <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+      <ResponsiveContainer className="pie" height={400} >
+        <ScatterChart 
+          margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+          options={{ shape: 'circle', markerSize: 20 }}
+          >
           <CartesianGrid />
           <XAxis type="category" dataKey="city" name="city" />
           <YAxis
