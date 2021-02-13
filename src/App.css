@@ -167,12 +167,14 @@ input[type="number"] {
 @media (min-width: 1024px) {
   .event-list {
     display: flexbox;
-    flex-flow: column;
+    flex-flow: row;
     column-count: 2;
   }
 
   .event-li {
     display: block;
+    width: 100%;
+    break-inside: avoid;
   }
 }
 .link {

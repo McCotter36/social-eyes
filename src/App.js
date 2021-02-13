@@ -6,13 +6,11 @@ import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
 import { OfflineAlert } from './Alert';
 import {
-  ScatterChart, 
-  Scatter, 
   XAxis, 
   YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer
+  ResponsiveContainer,
+  ComposedChart,
+  Bar,
 } from 'recharts';
 // import Login from './Login';
 import { extractLocations, getEvents } from './api';
@@ -129,26 +127,42 @@ componentDidMount() {
         </div>
         <h4>Events in each city</h4>
       <div className="data-vis-wrapper">
-        <EventGenre
-        locations={this.state.locations}
-        events={this.state.events}
-        />
-      <ResponsiveContainer className="pie" height={400} >
-        <ScatterChart 
-          margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-          options={{ shape: 'circle', markerSize: 20 }}
+        <ResponsiveContainer className="chart" height={400}>
+          <EventGenre
+          locations={this.state.locations}
+          events={this.state.events}
+          />
+        </ResponsiveContainer>
+      <ResponsiveContainer className="chart" height={400}>
+        <ComposedChart
+          layout='vertical'
+          width={'80%'}
+          data={this.getData()}
+          margin={{
+            top: 20,
+          right: 20,
+          bottom: 20,
+          left: 20,
+          }}
           >
-          <CartesianGrid />
-          <XAxis type="category" dataKey="city" name="city" />
-          <YAxis
+          <YAxis 
+            type="category" 
+            dataKey="city" 
+            name="city" 
+            padding={{
+              top: 20,
+              bottom: 20,
+            }}
+          />
+          <XAxis
             allowDecimals={false}
             type="number"
             dataKey="number"
             name="number of events"
           />
-          <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-          <Scatter data={this.getData()} fill="#8884d8" />
-        </ScatterChart>
+          {/* <Tooltip cursor={{ strokeDasharray: "1 1" }} /> */}
+          <Bar dataKey="number" barSize={10} fill="#00C49F" />
+        </ComposedChart>
       </ResponsiveContainer>
       </div>
         <EventList className="EventList" events={this.state.events} />      

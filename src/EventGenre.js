@@ -28,13 +28,14 @@ const EventGenre = ({ events }) => {
         <Pie
           data={data}
           labelLine={false}
-          outerRadius={80}
+          outerRadius={'60%'}
           fill="#8884d8"
           dataKey="value"
-          label={({ name, percent }) =>
-            `${name} ${(percent * 100).toFixed(0)}%`
-          }
-        >
+          label={({ name, percent }) => {
+            if (percent !== 0){
+            return (`${name} ${(percent * 100).toFixed(0)}%`)
+          }}}
+          >
           {data.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
