@@ -12,9 +12,8 @@ import {
   ComposedChart,
   Bar,
 } from 'recharts';
-// import Login from './Login';
-import { extractLocations, getEvents } from './api';
-// import './nprogress.css';
+import Login from './Login';
+import { extractLocations, getEvents, checkToken } from './api';
 import './App.css';
 
 class App extends Component {
@@ -54,20 +53,20 @@ class App extends Component {
   }
 };
 
-// async componentDidMount() {
-//   const accessToken = localStorage.getItem("access_token");
-//   const validToken = accessToken !== null  ? await checkToken(accessToken) : false;
-//   this.setState({ tokenCheck: validToken });
-//   if(validToken === true) this.updateEvents()
-//   const searchParams = new URLSearchParams(window.location.search);
-//   const code = searchParams.get("code");
+async componentDidMount() {
+  const accessToken = localStorage.getItem("access_token");
+  const validToken = accessToken !== null  ? await checkToken(accessToken) : false;
+  this.setState({ tokenCheck: validToken });
+  if(validToken === true) this.updateEvents()
+  const searchParams = new URLSearchParams(window.location.search);
+  const code = searchParams.get("code");
 
-//   this.mounted = true;
-//   if (code && this.mounted === true && validToken === false){ 
-//     this.setState({tokenCheck:true });
-//     this.updateEvents()
-//   }
-// }
+  this.mounted = true;
+  if (code && this.mounted === true && validToken === false){ 
+    this.setState({tokenCheck:true });
+    this.updateEvents()
+  }
+}
 
 componentDidMount() {
   this.mounted = true;
@@ -109,14 +108,12 @@ componentDidMount() {
   };
 
   render () {
-    // const { tokenCheck } = this.state;
-    return (
-    // tokenCheck === false ? (
-    //   <div className="App">
-    //     <Login />
-    //     </div>
-    // ) : 
-    
+    const { tokenCheck } = this.state;
+    return tokenCheck === false ? (
+      <div className="App">
+        <Login />
+        </div>
+    ) : (
       <div className="App">
         <div className="alert">
         <OfflineAlert className="alert" text={this.state.alertText} />
