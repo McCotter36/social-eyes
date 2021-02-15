@@ -13,7 +13,11 @@ import {
   Bar,
 } from 'recharts';
 import Login from './Login';
-import { extractLocations, getEvents, checkToken } from './api';
+import { 
+  extractLocations, 
+  getEvents, 
+  checkToken 
+  } from './api';
 import './App.css';
 
 class App extends Component {
@@ -53,20 +57,21 @@ class App extends Component {
   }
 };
 
-async componentDidMount() {
-  const accessToken = localStorage.getItem("access_token");
-  const validToken = accessToken !== null  ? await checkToken(accessToken) : false;
-  this.setState({ tokenCheck: validToken });
-  if(validToken === true) this.updateEvents()
-  const searchParams = new URLSearchParams(window.location.search);
-  const code = searchParams.get("code");
+// async componentDidMount() {
+//   const accessToken = localStorage.getItem("access_token");
+//   const validToken = accessToken !== null  ? await checkToken(accessToken) : false;
+//   this.setState({ tokenCheck: validToken });
+//   if(validToken === true) this.updateEvents();
+//   const searchParams = new URLSearchParams(window.location.search);
+//   const code = searchParams.get("code");
 
-  this.mounted = true;
-  if (code && this.mounted === true && validToken === false){ 
-    this.setState({tokenCheck:true });
-    this.updateEvents()
-  }
-}
+//   this.mounted = true;
+//   if (code && this.mounted === true && validToken === false) { 
+//     this.setState({ tokenCheck: true });
+//     // this.updateEvents();
+//   }
+//   window.addEventListener("online", this.offlineAlert());
+// }
 
 componentDidMount() {
   this.mounted = true;
@@ -81,6 +86,12 @@ componentDidMount() {
   window.addEventListener("online", this.offlineAlert());
 }
 
+componentWillUnmount(){
+  this.mounted = false;
+}
+
+
+
   offlineAlert = () => {
     if (navigator.onLine === false) {
       this.setState({
@@ -92,15 +103,11 @@ componentDidMount() {
     }
   };
 
-  componentWillUnmount(){
-    this.mounted = false;
-  }
 
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location)
-        .length;
+      const number = events.filter((event) => event.location === location).length;
       const city = location.split(",").shift();
       return { city, number };
     });
@@ -108,12 +115,13 @@ componentDidMount() {
   };
 
   render () {
-    const { tokenCheck } = this.state;
-    return tokenCheck === false ? (
-      <div className="App">
-        <Login />
-        </div>
-    ) : (
+    // const { tokenCheck } = this.state;
+    // return tokenCheck === false ? (
+    //   <div className="App">
+    //     <Login />
+    //     </div>
+    // ) : 
+    return (
       <div className="App">
         <div className="alert">
         <OfflineAlert className="alert" text={this.state.alertText} />
@@ -157,7 +165,6 @@ componentDidMount() {
             dataKey="number"
             name="number of events"
           />
-          {/* <Tooltip cursor={{ strokeDasharray: "1 1" }} /> */}
           <Bar dataKey="number" barSize={10} fill="#00C49F" />
         </ComposedChart>
       </ResponsiveContainer>

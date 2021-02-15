@@ -62,14 +62,12 @@ const getEvents = async () => {
 
 
 const getAccessToken = async () => {
-  const accessToken = await
-  localStorage.getItem('access_token');
+  const accessToken = await localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || !tokenCheck) {
     await localStorage.removeItem("access_token");
-    const searchParams = new 
-    URLSearchParams(window.location.search);
+    const searchParams = new URLSearchParams(window.location.search);
     const code = await searchParams.get("code");
     if (!code) {
       const results = await axios.get(
