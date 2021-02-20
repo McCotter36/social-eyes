@@ -61,15 +61,25 @@ class App extends Component {
 //   const accessToken = localStorage.getItem("access_token");
 //   const validToken = accessToken !== null  ? await checkToken(accessToken) : false;
 //   this.setState({ tokenCheck: validToken });
-//   if(validToken === true) this.updateEvents();
-//   const searchParams = new URLSearchParams(window.location.search);
-//   const code = searchParams.get("code");
+//   if(validToken === true) {
+//   this.updateEvents();
+    // {getEvents().then((events) => {
+    //     if (this.mounted) {
+    //       this.setState({
+    //         events: events,
+    //         locations: extractLocations(events),
+    //       });
+    //     }
+    //   });
+    // } 
+  // const searchParams = new URLSearchParams(window.location.search);
+  // const code = searchParams.get("code");
 
-//   this.mounted = true;
-//   if (code && this.mounted === true && validToken === false) { 
-//     this.setState({ tokenCheck: true });
-//     // this.updateEvents();
-//   }
+  // this.mounted = true;
+  // if (code && this.mounted === true && validToken === false) { 
+  //   this.setState({ tokenCheck: true });
+    // this.updateEvents();
+  // }
 //   window.addEventListener("online", this.offlineAlert());
 // }
 
@@ -115,13 +125,13 @@ componentWillUnmount(){
   };
 
   render () {
-    // const { tokenCheck } = this.state;
-    // return tokenCheck === false ? (
-    //   <div className="App">
-    //     <Login />
-    //     </div>
-    // ) : 
-    return (
+    const { tokenCheck } = this.state;
+    return tokenCheck === false ? (
+      <div className="App">
+        <Login />
+        </div>
+    ) : (
+    // return (
       <div className="App">
         <div className="alert">
         <OfflineAlert className="alert" text={this.state.alertText} />
@@ -138,7 +148,7 @@ componentWillUnmount(){
           events={this.state.events}
           />
         </ResponsiveContainer>
-      <ResponsiveContainer className="chart" height={400}>
+      <ResponsiveContainer className="chart" height={500}>
         <ComposedChart
           layout='vertical'
           width={'80%'}
