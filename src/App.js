@@ -125,13 +125,13 @@ componentWillUnmount(){
   };
 
   render () {
-    // const { tokenCheck } = this.state;
-    // return tokenCheck === false ? (
-    //   <div className="App">
-    //     <Login />
-    //     </div>
-    // ) : (
-    return (
+    const { tokenCheck } = this.state;
+    return tokenCheck === false ? (
+      <div className="App">
+        <Login />
+        </div>
+    ) : (
+    // return (
       <div className="App">
         <div className="alert">
         <OfflineAlert className="alert" text={this.state.alertText} />
